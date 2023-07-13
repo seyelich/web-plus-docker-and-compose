@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3"
 services:
   kupi-backend:
     image: "seyelich/kupi-backend"
@@ -8,12 +8,6 @@ services:
       - "4000:4000"
     depends_on:
       - kupi-database
-    healthcheck:
-      test: "wget -nv -t1 --spider 'http://localhost:4000/'"
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
     env_file: .env
     networks:
       - db-network
