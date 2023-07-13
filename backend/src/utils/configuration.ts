@@ -1,14 +1,27 @@
+import 'dotenv/config';
+
+const {
+  PORT,
+  JWT_SECRET,
+  POSTGRES_PASSWORD,
+  POSTGRES_DB,
+  POSTGRES_USER,
+  POSTGRES_HOST,
+  POSTGRES_PORT,
+  POSTGRES_SCHEMA,
+} = process.env;
+
 export default () => ({
   server: {
-    port: parseInt(process.env.PORT, 10) || 3000,
+    port: parseInt(PORT, 10) || 4000,
   },
   database: {
-    host: process.env.DB_HOST || 'localhost',
-    port: parseInt(process.env.DATABASE_PORT, 10) || 5432,
-    username: process.env.DB_USER || 'student',
-    password: process.env.DB_PASSWORD || 'student',
-    database: process.env.DB_DATABASE || 'kupipodariday',
-    schema: process.env.DB_SCHEMA || 'kupipodariday',
+    host: POSTGRES_HOST || 'localhost',
+    port: parseInt(POSTGRES_PORT, 10) || 5432,
+    username: POSTGRES_USER || 'student',
+    password: POSTGRES_PASSWORD || 'student',
+    database: POSTGRES_DB || 'kupipodariday',
+    schema: POSTGRES_SCHEMA || 'kupipodariday',
   },
-  jwt_secret: process.env.JWT_SECRET || 'test-secret-key',
+  jwt_secret: JWT_SECRET || 'test-secret-key',
 });

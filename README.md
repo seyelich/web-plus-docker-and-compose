@@ -1,3 +1,5 @@
 # Докеризация приложения
 
-Перед тем как приступить к выполнению проектной работы разместите в репозитории исходный код фронтенд и бэкенд частей сервиса КупиПодариДай, реализованного вами ранее. 
+- IP адрес 51.250.82.16
+- Frontend https://kupipodariday-seyelich.nomoredomains.work
+- Backend https://api.kupipodariday-seyelic.nomoredomains.work

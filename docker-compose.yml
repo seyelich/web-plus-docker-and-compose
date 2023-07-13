@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  kupi-backend:
+    image: "seyelich/kupi-backend"
+    build: ./backend
+    restart: "unless-stopped"
+    ports:
+      - "4000:4000"
+    depends_on:
+      - kupi-database
+    healthcheck:
+      test: "wget -nv -t1 --spider 'http://localhost:4000/'"
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    env_file: .env
+    networks:
+      - db-network
+
+  kupi-frontend:
+    build: ./frontend
+    image: "seyelich/kupi-frontend"
+    restart: "unless-stopped"
+    depends_on:
+      - kupi-backend
+    ports:
+      - "8081:80"
+    networks:
+      - http-network
+
+  kupi-database:
+    image: "postgres:12"
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./pg-data:/data/postgres
+    networks:
+      - db-network
+networks:
+  http-network:
+  db-network:
