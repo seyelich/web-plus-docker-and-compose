@@ -1,4 +1,4 @@
-export const URL = "https://api.kupipodariday-seyelic.nomoredomains.work";
+export const URL = "https://api.kpd-seyelich.nomoredomains.xyz";
 
 export const MINIMUM_PASSWORD_LENGTH = 3;
 export const MINIMUM_USERNAME_LENGTH = 3;
