@@ -1,5 +1,11 @@
-# Докеризация приложения
+# Докеризация веб-приложения "КупиПодариДай"
 
-- IP адрес 51.250.82.16
-- Frontend https://kpd-seyelich.nomoredomains.xyz
-- Backend https://api.kpd-seyelich.nomoredomains.xyz
+КупиПодариДай - сервис вишлистов. В нём каждый зарегистрированный пользователь может рассказать о том, какой подарок он бы хотел получить, а также скинуться на подарок для другого пользователя, указав сумму, которую готов на это потратить.
+
+- IP-адрес сервера: 51.250.82.16
+- Frontend: https://kpd-seyelich.nomoredomains.xyz
+- Backend: https://api.kpd-seyelich.nomoredomains.xyz
+
+**Функционал**: авторизация, создание базы данных пользователей, обновление/удаление профиля, валидация данных.
+
+**Стэк**: TypeScript, PostgreSQL, Nest.js, TypeORM, Docker, Docker-compose.
